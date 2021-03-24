@@ -9,17 +9,15 @@ public class CalculatorTest {
 
         System.out.print("Хотите продолжить вычисления? [yes/no]:");
         String userAnswer = in.nextLine();
-        System.out.println("0 " + userAnswer);
-        if (userAnswer == "yes") {
-            System.out.println("1" + userAnswer);
+
+        if (userAnswer.equals("yes")) {
             res = calculateData();
             System.out.println("Результат равен: " + res);
-        } else if (userAnswer == "no") {
+        } else if (userAnswer.equals("no")) {
         } else {
-            while(userAnswer != "yes" || userAnswer != "no") {
+            while(userAnswer.equals("yes") || !userAnswer.equals("no")) {
             System.out.print("Хотите продолжить вычисления? [yes/no]:");
             userAnswer = in.nextLine();
-            System.out.println("2" + userAnswer);
             }
         }
     }
