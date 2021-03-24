@@ -25,30 +25,30 @@ public class JaegerTest {
         rob2.setKillKaiju(2);
 
         System.out.println("Модель робота: " + rob1.getModelName() + "\n"
-        + "Марка:" + rob1.getMark() + "\n"
-        + "Источник:" + rob1.getOrigin() + "\n"
-        + "Высота:" + rob1.getHeight() + "\n"
-        + "Масса:" + rob1.getWeight() + "\n"
-        + "Скорость:" + rob1.getOrigin() + "\n"
-        + "Сила:" + rob1.getSpeed() + "\n"
-        + "Броня:" + rob1.getStrength() + "\n"
-        + "Убито Kaiju:" + rob1.getArmor() + "\n"
-        + "Оружие:" + rob1.getKillKaiju() + "\n"
-        + "Old Model:" + rob1.oldModel(2015) + "\n");
+        + "Марка: " + rob1.getMark() + "\n"
+        + "Источник: " + rob1.getOrigin() + "\n"
+        + "Высота: " + rob1.getHeight() + "\n"
+        + "Масса: " + rob1.getWeight() + "\n"
+        + "Скорость: " + rob1.getOrigin() + "\n"
+        + "Сила: " + rob1.getSpeed() + "\n"
+        + "Броня: " + rob1.getStrength() + "\n"
+        + "Убито Kaiju: " + rob1.getArmor() + "\n"
+        + "Оружие: " + rob1.getKillKaiju() + "\n"
+        + "Old Model: " + rob1.oldModel(2015) + "\n");
         rob1.powerMoves("Sluggernaut/Headshock");
         rob1.useWeapon("Incinerator turbines and Tesla fists");
 
         System.out.println("Модель робота: " + rob2.getModelName() + "\n"
-        + "Марка:" + rob2.getMark() + "\n"
-        + "Источник:" + rob2.getOrigin() + "\n"
-        + "Высота:" + rob2.getHeight() + "\n"
-        + "Масса:" + rob2.getWeight() + "\n"
-        + "Скорость:" + rob2.getOrigin() + "\n"
-        + "Сила:" + rob2.getSpeed() + "\n"
-        + "Броня:" + rob2.getStrength() + "\n"
-        + "Убито Kaiju:" + rob2.getArmor() + "\n"
-        + "Оружие:" + rob2.getKillKaiju() + "\n"
-        + "Old Model:" + rob2.oldModel(2019) + "\n");
+        + "Марка: " + rob2.getMark() + "\n"
+        + "Источник: " + rob2.getOrigin() + "\n"
+        + "Высота: " + rob2.getHeight() + "\n"
+        + "Масса: " + rob2.getWeight() + "\n"
+        + "Скорость: " + rob2.getOrigin() + "\n"
+        + "Сила: " + rob2.getSpeed() + "\n"
+        + "Броня: " + rob2.getStrength() + "\n"
+        + "Убито Kaiju: " + rob2.getArmor() + "\n"
+        + "Оружие: " + rob2.getKillKaiju() + "\n"
+        + "Old Model: " + rob2.oldModel(2019) + "\n");
         rob2.powerMoves("Six Shooter");
         rob2.useWeapon("Assault Mount 3.25 \"Sting-Blades\" and WMB2x90 AKM Chest launcher");
     }
