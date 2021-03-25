@@ -20,10 +20,10 @@ public class CalculatorTest {
             userAnswer = in.nextLine();
             }
         }
-    }
-    public static int calculateData() {
-        Scanner in = new Scanner(System.in);
-        Calculator clclt = new Calculator();
+
+        int calculateData() {
+            Scanner in = new Scanner(System.in);
+            Calculator clclt = new Calculator();
             System.out.print("Введите первое число: ");
             int num1 = in.nextInt();
             System.out.print("Введите знак математической операции: ");
@@ -33,4 +33,5 @@ public class CalculatorTest {
             int res = clclt.calculateData(num1, num2, operation);
             return  res;
         }
+    }
 }

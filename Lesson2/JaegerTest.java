@@ -2,7 +2,6 @@ public class JaegerTest {
 
     public static void main(String[] args) {
         Jaeger rob1 = new Jaeger();
-        Jaeger rob2 = new Jaeger();
 
         rob1.setModelName("Cherno Alpha (Jaeger)");
         rob1.setMark("Mark-1");
@@ -14,6 +13,8 @@ public class JaegerTest {
         rob1.setArmor(10);
         rob1.setKillKaiju(4);
 
+        Jaeger rob2 = new Jaeger();
+
         rob2.setModelName("Striker Eureka");
         rob2.setMark("Mark-5");
         rob2.setOrigin("Australia");
@@ -24,7 +25,20 @@ public class JaegerTest {
         rob2.setArmor(9);
         rob2.setKillKaiju(2);
 
-        System.out.println("Модель робота: " + rob1.getModelName() + "\n"
+        toStringLine tsl = new toStringLine();
+        System.out.println(tsl);
+        rob1.powerMoves("Sluggernaut/Headshock");
+        rob1.useWeapon("Incinerator turbines and Tesla fists");
+
+        rob2.powerMoves("Six Shooter");
+        rob2.useWeapon("Assault Mount 3.25 \"Sting-Blades\" and WMB2x90 AKM Chest launcher");
+    }
+}
+
+public class toStringLine() {
+
+    public String toString() {
+        return "Модель робота: " + rob1.getModelName() + "\n"
         + "Марка: " + rob1.getMark() + "\n"
         + "Источник: " + rob1.getOrigin() + "\n"
         + "Высота: " + rob1.getHeight() + "\n"
@@ -34,11 +48,10 @@ public class JaegerTest {
         + "Броня: " + rob1.getStrength() + "\n"
         + "Убито Kaiju: " + rob1.getArmor() + "\n"
         + "Оружие: " + rob1.getKillKaiju() + "\n"
-        + "Old Model: " + rob1.oldModel(2015) + "\n");
-        rob1.powerMoves("Sluggernaut/Headshock");
-        rob1.useWeapon("Incinerator turbines and Tesla fists");
-
-        System.out.println("Модель робота: " + rob2.getModelName() + "\n"
+        + "Old Model: " + rob1.oldModel(2015) + "\n";
+    }
+    public String toString() {
+        return "Модель робота: " + rob2.getModelName() + "\n"
         + "Марка: " + rob2.getMark() + "\n"
         + "Источник: " + rob2.getOrigin() + "\n"
         + "Высота: " + rob2.getHeight() + "\n"
@@ -48,8 +61,7 @@ public class JaegerTest {
         + "Броня: " + rob2.getStrength() + "\n"
         + "Убито Kaiju: " + rob2.getArmor() + "\n"
         + "Оружие: " + rob2.getKillKaiju() + "\n"
-        + "Old Model: " + rob2.oldModel(2019) + "\n");
-        rob2.powerMoves("Six Shooter");
-        rob2.useWeapon("Assault Mount 3.25 \"Sting-Blades\" and WMB2x90 AKM Chest launcher");
+        + "Old Model: " + rob2.oldModel(2019) + "\n";
     }
+
 }
