@@ -23,9 +23,8 @@ public class CalculatorTest {
 
         System.out.print("Хотите продолжить вычисления? [yes/no]:");
         String userAnswer = in.nextLine();
-        System.out.println("Результат userAnswer: " + userAnswer);
-        
-        if (!userAnswer.equals("yes") | !userAnswer.equals("no")) {
+
+        if (!userAnswer.equals("yes") && !userAnswer.equals("no")) {
             userAnswer = caclContinue();
         }
         return userAnswer;
