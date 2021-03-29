@@ -1,40 +1,23 @@
+import java.util.Scanner;
+
 public class Calculator {
 
-    private int num1;
-    private char operation;
-    private int num2;
     private int result;
+    Scanner in = new Scanner(System.in);
 
-    public void setNum1(int num1){
-        this.num1 = num1;
+    public int getNum() {
+        System.out.print("Введите число: ");
+        int num = in.nextInt();
+        return num;
     }
 
-    public void setOperation(char operation){
-        this.operation = operation;
-    }
-
-    public void setNum2(int num2){
-        this.num2 = num2;
-    }
-
-    public int getNum1(){
-        return num1;
-    }
-
-    public char getOperation(){
+    public char getOperand() {
+        System.out.print("Введите знак математической операции: ");
+        char operation = in.next(".").charAt(0);
         return operation;
     }
 
-    public int getNum2(){
-        return num2;
-    }
-
     public int calculate(int num1, int num2, char operation) {
-
-//System.out.println("num1: " + num1);
-//System.out.println("num2: " + num2);
-//System.out.println("operation: " + operation);
-
         switch(operation) {
             case '+': 
                 result = num1 + num2;
