@@ -9,78 +9,29 @@ public class Jaeger {
     private int strength;
     private int armor;
     private int killKaiju;
-    //private String weapon;
 
-    public void setModelName(String modelName) {
+    Jaeger(String modelName, String mark, String origin, float height, float weight, int speed, int strength, int armor, int killKaiju) {
         this.modelName = modelName;
-    }
-
-    public String getModelName() {
-        return modelName;
-    }
-
-    public void setMark(String mark) {
         this.mark = mark;
-    }
-
-    public String getMark() {
-        return mark;
-    }
-
-    public void setOrigin(String origin) {
         this.origin = origin;
-    }
-
-    public String getOrigin() {
-        return origin;
-    }
-
-    public void setHeight(float height) {
         this.height = height;
-    }
-
-    public float getHeight() {
-        return height;
-    }
-
-    public void setWeight(float weight) {
         this.weight = weight;
-    }
-
-    public float getWeight() {
-        return weight;
-    }
-
-    public void setSpeed(int speed) {
         this.speed = speed;
-    }
-
-    public int getSpeed() {
-        return speed;
-    }
-
-    public void setStrength(int strength) {
         this.strength = strength;
-    }
-
-    public int getStrength() {
-        return strength;
-    }
-
-    public void setArmor(int armor) {
         this.armor = armor;
-    }
-
-    public int getArmor() {
-        return armor;
-    }
-
-    public void setKillKaiju(int killKaiju) {
         this.killKaiju = killKaiju;
     }
 
-    public int getKillKaiju() {
-        return killKaiju;
+    public String toString() {
+        return "Модель робота: " + modelName + "\n"
+        + "Марка: " + mark + "\n"
+        + "Источник: " + origin + "\n"
+        + "Высота: " + height + "\n"
+        + "Масса: " + weight + "\n"
+        + "Скорость: " + speed + "\n"
+        + "Сила: " + weight + "\n"
+        + "Броня: " + armor + "\n"
+        + "Убито Kaiju: " + killKaiju;
     }
 
     public boolean oldModel(int launch) {
