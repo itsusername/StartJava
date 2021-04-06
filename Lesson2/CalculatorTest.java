@@ -11,7 +11,7 @@ public class CalculatorTest {
             int num1 = inputNum();
             char operation = inputOperation();
             int num2 = inputNum();
-
+            in.nextLine();
             int res = calc.calculate(num1, num2, operation);
             System.out.println("Результат равен: " + res);
         } while (isNext());
