@@ -1,3 +1,5 @@
+package com.startjava.lesson_2_3.robot;
+
 public class JaegerTest {
 
     public static void main(String[] args) {
@@ -7,7 +9,7 @@ public class JaegerTest {
         rob1.oldModel(2019);
         System.out.println("Old Model: " + rob1.oldModel(2010));
         rob1.powerMoves("Sluggernaut/Headshock");
-        rob1.useWeapon("Incinerator turbines and Tesla fists" + "\n");
+        rob1.useWeapon("Incinerator turbines and Tesla fists" + ".n");
 
         Jaeger rob2 = new Jaeger("Striker Eureka", "Mark-5", "Australia", 76.2f, 1.850f, 10, 10, 9, 2);
 
