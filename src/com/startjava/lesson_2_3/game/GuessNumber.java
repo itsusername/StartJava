@@ -1,3 +1,5 @@
+package com.startjava.lesson_2_3.game;
+
 import java.util.Scanner;
 import java.util.Random;
 
@@ -17,26 +19,24 @@ public class GuessNumber {
         int randomNumber = generator.nextInt(100) + 1;
 
         do {
-            int num1 = inputPlayerNum(p1.toString());
-            if (checkNum(randomNumber, num1, p1.toString())) {
+            int num1 = inputPlayerNum(p1.getName());
+            if (checkNums(randomNumber, num1, p1.getName())) {
                 break;
             }
 
-            int num2 = inputPlayerNum(p2.toString());
-            if (checkNum(randomNumber, num2, p2.toString())) {
+            int num2 = inputPlayerNum(p2.getName());
+            if (checkNums(randomNumber, num2, p2.getName())) {
                 break;
             }
         } while (true);
-
-        in.nextLine();
     }
 
-    public int inputPlayerNum(String name) {
+    private int inputPlayerNum(String name) {
         System.out.println(name + ", введите число: ");
         return in.nextInt();
     }
 
-    public boolean checkNum(int randomNumber, int number, String name) {
+    private boolean checkNums(int randomNumber, int number, String name) {
         if (number > randomNumber) {
             System.out.println("Данное число больше того, что загадал компьютер");
             return false;

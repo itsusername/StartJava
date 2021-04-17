@@ -1,3 +1,5 @@
+package com.startjava.lesson_2_3.robot;
+
 public class Jaeger {
 
     private String modelName;
@@ -23,14 +25,14 @@ public class Jaeger {
     }
 
     public String toString() {
-        return "Модель робота: " + modelName + "\n"
-        + "Марка: " + mark + "\n"
-        + "Источник: " + origin + "\n"
-        + "Высота: " + height + "\n"
-        + "Масса: " + weight + "\n"
-        + "Скорость: " + speed + "\n"
-        + "Сила: " + weight + "\n"
-        + "Броня: " + armor + "\n"
+        return "Модель робота: " + modelName + ".n"
+        + "Марка: " + mark + ".n"
+        + "Источник: " + origin + ".n"
+        + "Высота: " + height + ".n"
+        + "Масса: " + weight + ".n"
+        + "Скорость: " + speed + ".n"
+        + "Сила: " + weight + ".n"
+        + "Броня: " + armor + ".n"
         + "Убито Kaiju: " + killKaiju;
     }
 
