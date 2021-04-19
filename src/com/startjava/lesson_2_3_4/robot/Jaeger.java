@@ -1,4 +1,4 @@
-package com.startjava.lesson_2_3.robot;
+package com.startjava.lesson_2_3_4.robot;
 
 public class Jaeger {
 
@@ -37,11 +37,7 @@ public class Jaeger {
     }
 
     public boolean oldModel(int launch) {
-        if (launch > 2015) {
-            return true;
-        } else {
-            return false;
-        }
+        return launch > 2015;
     }
 
     public void powerMoves(String move) {
