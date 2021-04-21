@@ -1,4 +1,4 @@
-package com.startjava.lesson_2_3.calculator;
+package com.startjava.lesson_2_3_4.calculator;
 
 import java.util.Scanner;
 
@@ -10,23 +10,15 @@ public class CalculatorTest {
         Calculator calc = new Calculator();
 
         do {
-            int num1 = inputNum();
-            char operation = inputOperation();
-            int num2 = inputNum();
-            in.nextLine();
-            int res = calc.calculate(num1, num2, operation);
+            String[] operation = inputMathOperation().split(" ");
+            int res = calc.calculate(Integer.parseInt(operation[0]), operation[1], Integer.parseInt(operation[2]));
             System.out.println("Результат равен: " + res);
         } while (isNext());
     }
 
-    public static int inputNum() {
-        System.out.print("Введите число: ");
-        return in.nextInt();
-    }
-
-    public static char inputOperation() {
-        System.out.print("Введите знак математической операции: ");
-        return in.next().charAt(0);
+    public static String inputMathOperation() {
+        System.out.print("Введите математическое выражение: ");
+        return in.nextLine();
     }
 
     public static boolean isNext() {
