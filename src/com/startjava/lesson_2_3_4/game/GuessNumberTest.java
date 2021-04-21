@@ -26,7 +26,7 @@ public class GuessNumberTest {
     }
 
     public static boolean isNext() {
-        System.out.print("Хотите продолжить вычисления? [yes/no]:");
+        System.out.print("\nХотите продолжить вычисления? [yes/no]:");
         String userAnswer = in.nextLine();
 
         if (userAnswer.equals("yes")) {
