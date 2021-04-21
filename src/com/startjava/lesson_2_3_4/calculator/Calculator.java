@@ -4,28 +4,24 @@ public class Calculator {
 
     private int result;
 
-    public int calculate(int num1, int num2, char operation) {
+    public int calculate(int num1, String operation, int num2) {
         switch(operation) {
-            case '+': 
+            case "+":
                 result = num1 + num2;
                 break;
-             case'-':
+             case"-":
                 result = num1 - num2;
                 break;
-             case '*':
+             case "*":
                 result = num1 * num2;
                 break;
-             case '/':
+             case "/":
                 result = num1 / num2;
                 break;
-             case '^':
-                int powResult = 1;
-                for(int i = 1; i <= num2; i++) {
-                    powResult *= num1;
-                }
-                result = powResult;
+             case "^":
+                result = (int) Math.pow(num1, num2);
                 break;
-             case '%':
+             case "%":
                 result = num1 % num2;
                 break;
         } 
