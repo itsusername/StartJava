@@ -22,37 +22,40 @@ public class GuessNumber {
         int attemptPlayer2 = 0;
 
         do {
-            int num1 = inputPlayerNum(p1.getName());
+            int num1 = inputNum(p1.getName());
 
             if (attemptPlayer1 != 9) {
-                p1.ArrAttempt(attemptPlayer1, num1);
+                p1.attempts(attemptPlayer1, num1);
                 attemptPlayer1++;
             } else {
                 System.out.println("У " + p1.getName() + " закончились попытки");
             }
             if (checkNums(randomNumber, num1, p1.getName(), attemptPlayer1)) {
-                endOfGame(attemptPlayer1, attemptPlayer2);
+                showAttempts(attemptPlayer1, p1);
+                showAttempts(attemptPlayer2, p2);
                 break;
             }
 
-            int num2 = inputPlayerNum(p2.getName());
+            int num2 = inputNum(p2.getName());
 
             if (attemptPlayer2 != 9) {
-                p2.ArrAttempt(attemptPlayer2, num2);
+                p2.attempts(attemptPlayer2, num2);
                 attemptPlayer2++;
             } else {
                 System.out.println("У " + p2.getName() + " закончились попытки");
-                endOfGame(attemptPlayer1, attemptPlayer2);
+                showAttempts(attemptPlayer1, p1);
+                showAttempts(attemptPlayer2, p2);
                 break;
             }
             if (checkNums(randomNumber, num2, p2.getName(), attemptPlayer2)) {
-                endOfGame(attemptPlayer1, attemptPlayer2);
+                showAttempts(attemptPlayer1, p1);
+                showAttempts(attemptPlayer2, p2);
                 break;
             }
         } while (true);
     }
 
-    private int inputPlayerNum(String name) {
+    private int inputNum(String name) {
         System.out.println(name + ", введите число: ");
         return in.nextInt();
     }
@@ -70,16 +73,13 @@ public class GuessNumber {
         }
     }
 
-    private void endOfGame(int attemptPlayer1, int attemptPlayer2) {
-        System.out.print(p1.getName() + " - ");
-        for (int numbs1 : p1.getArraysCopy(attemptPlayer1)) {
-            System.out.print(numbs1+" ");
+    private void showAttempts(int attemptPlayer, Player p) {
+        System.out.print(p.getName() + " - ");
+        for (int numbs : p.getEnteredNums(attemptPlayer)) {
+            System.out.print(numbs+" ");
         }
-        System.out.print("\n" + p2.getName() + " - ");
-        for (int numbs2 : p2.getArraysCopy(attemptPlayer2)) {
-            System.out.print(numbs2+" ");
-        }
-        p1.fillArray(attemptPlayer1);
-        p2.fillArray(attemptPlayer2);
+        System.out.print(" ");
+        p.clearNums(attemptPlayer);
+        p.clearNums(attemptPlayer);
     }
 }

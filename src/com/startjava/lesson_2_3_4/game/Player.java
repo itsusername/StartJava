@@ -5,30 +5,29 @@ import java.util.Arrays;
 public class Player {
     
     private String name;
-    private int[] arrAttempt = new int[10];
-
-    public void ArrAttempt(int i, int num) {
-        arrAttempt[i] = num;
-    }
+    private int[] attempts = new int[10];
 
     Player(String name) {
         this.name = name;
+    }
+
+    public String getName() {
+        return name;
     }
 
     public void setName(String name) {
         this.name = name;
     }
 
-     public String getName() {
-        return name;
+    public int[] getEnteredNums(int i) {
+        return Arrays.copyOf(attempts, i);
     }
 
-    public int[] getArraysCopy(int i) {
-        int[] arrAttemptCopy = Arrays.copyOf(arrAttempt, i);
-        return arrAttemptCopy;
+    public void attempts(int i, int num) {
+        attempts[i] = num;
     }
 
-    public void fillArray(int i) {
-        Arrays.fill(arrAttempt, 0, i, 0);
+    public void clearNums(int i) {
+        Arrays.fill(attempts, 0, i, 0);
     }
 }
