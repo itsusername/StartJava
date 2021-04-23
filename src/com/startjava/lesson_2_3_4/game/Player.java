@@ -15,15 +15,11 @@ public class Player {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public int[] getEnteredNums(int i) {
         return Arrays.copyOf(attempts, i);
     }
 
-    public void attempts(int i, int num) {
+    public void getLastAttempt(int i, int num) {
         attempts[i] = num;
     }
 

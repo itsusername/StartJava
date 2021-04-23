@@ -25,7 +25,7 @@ public class GuessNumber {
             int num1 = inputNum(p1.getName());
 
             if (attemptPlayer1 != 9) {
-                p1.attempts(attemptPlayer1, num1);
+                p1.getLastAttempt(attemptPlayer1, num1);
                 attemptPlayer1++;
             } else {
                 System.out.println("У " + p1.getName() + " закончились попытки");
@@ -39,7 +39,7 @@ public class GuessNumber {
             int num2 = inputNum(p2.getName());
 
             if (attemptPlayer2 != 9) {
-                p2.attempts(attemptPlayer2, num2);
+                p2.getLastAttempt(attemptPlayer2, num2);
                 attemptPlayer2++;
             } else {
                 System.out.println("У " + p2.getName() + " закончились попытки");
@@ -78,7 +78,7 @@ public class GuessNumber {
         for (int numbs : p.getEnteredNums(attemptPlayer)) {
             System.out.print(numbs+" ");
         }
-        System.out.print(" ");
+        System.out.print("\n");
         p.clearNums(attemptPlayer);
         p.clearNums(attemptPlayer);
     }
