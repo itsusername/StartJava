@@ -3,9 +3,11 @@ package com.startjava.lesson_2_3_4.game;
 import java.util.Arrays;
 
 public class Player {
-    
+
     private String name;
+    private int nums;
     private int[] attempts = new int[10];
+    public int attemptPlayer;
 
     Player(String name) {
         this.name = name;
@@ -15,16 +17,20 @@ public class Player {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public int getNumbs() {
+        return nums;
+    }
+
+    public void setNumbs(int num) {
+        this.nums = num;
     }
 
     public int[] getEnteredNums(int i) {
         return Arrays.copyOf(attempts, i);
     }
 
-    public void attempts(int i, int num) {
-        attempts[i] = num;
+    public void getLastAttempt(int i) {
+        attempts[i] = nums;
     }
 
     public void clearNums(int i) {

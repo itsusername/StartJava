@@ -7,11 +7,9 @@ public class GuessNumberTest {
     static Scanner in = new Scanner(System.in);
 
     public static void main(String[] args) {
-        String name1 = createPlayer(1);
-        Player p1 = new Player(name1);
 
-        String name2 = createPlayer(2);
-        Player p2 = new Player(name2);
+        Player p1 = createPlayer(1);
+        Player p2 = createPlayer(2);
 
         GuessNumber game = new GuessNumber(p1, p2);
 
@@ -20,9 +18,9 @@ public class GuessNumberTest {
         } while (isNext());
     }
 
-    private static String createPlayer(int n) {
+    private static Player createPlayer(int n) {
         System.out.println("Игрок №" + n + ", введите Ваше имя: ");
-        return in.nextLine();
+        return new Player(in.nextLine());
     }
 
     private static boolean isNext() {
