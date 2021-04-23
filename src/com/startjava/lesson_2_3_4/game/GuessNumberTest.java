@@ -7,7 +7,6 @@ public class GuessNumberTest {
     static Scanner in = new Scanner(System.in);
 
     public static void main(String[] args) {
-
         Player p1 = createPlayer(1);
         Player p2 = createPlayer(2);
 
