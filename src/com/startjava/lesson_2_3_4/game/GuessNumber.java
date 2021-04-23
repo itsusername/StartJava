@@ -74,8 +74,8 @@ public class GuessNumber {
 
     private void showAttempts(int attemptPlayer, Player p) {
         System.out.print(p.getName() + " - ");
-        for (int nums : p.getEnteredNums(attemptPlayer)) {
-            System.out.print(nums+" ");
+        for (int numbs : p.getEnteredNums(attemptPlayer)) {
+            System.out.print(numbs+" ");
         }
         System.out.print("\n");
     }
