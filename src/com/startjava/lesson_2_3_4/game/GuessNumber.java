@@ -18,28 +18,26 @@ public class GuessNumber {
     public void start() {
         int randomNumber = generator.nextInt(100) + 1;
         System.out.println("Welcome! У вас по 10 попыток, чтобы отгадать число");
-        p1.attemptPlayer = 0;
-        p2.attemptPlayer = 0;
+        p1.setAttemptNumber(0);
+        p2.setAttemptNumber(0);
 
         do {
-            if (p1.attemptPlayer < 10) {
+            if (p1.getAttemptNumber() < 10) {
                 p1.setNumbs(inputNum(p1.getName()));
-                p1.getLastAttempt(p1.attemptPlayer);
-                p1.attemptPlayer++;
+                p1.setAttemptNumber(p1.getAttemptNumber()+1);
             } else {
-                System.out.println("У " + p1.getName() + " закончились попытки" + p1.attemptPlayer);
+                System.out.println("У " + p1.getName() + " закончились попытки");
             }
 
             if (checkNums(randomNumber, p1)) {
                 break;
             }
 
-            if (p2.attemptPlayer < 10) {
+            if (p2.getAttemptNumber() < 10) {
                 p2.setNumbs(inputNum(p2.getName()));
-                p2.getLastAttempt(p2.attemptPlayer);
-                p2.attemptPlayer++;
+                p2.setAttemptNumber(p2.getAttemptNumber()+1);
             } else {
-                System.out.println("У " + p2.getName() + " закончились попытки"+ p2.attemptPlayer);
+                System.out.println("У " + p2.getName() + " закончились попытки");
                 break;
             }
 
@@ -47,10 +45,10 @@ public class GuessNumber {
                 break;
             }
         } while (true);
-        showAttempts(p1.attemptPlayer, p1);
-        showAttempts(p2.attemptPlayer, p2);
-        p1.clearNums(p1.attemptPlayer);
-        p2.clearNums(p2.attemptPlayer);
+        showAttempts(p1);
+        showAttempts(p2);
+        p1.clearNums();
+        p2.clearNums();
     }
 
     private int inputNum(String name) {
@@ -60,22 +58,22 @@ public class GuessNumber {
 
     private boolean checkNums(int randomNumber, Player p) {
         if (p.getNumbs() == randomNumber) {
-            System.out.println("Игрок \"" + p.getName() + "\" угадал число " + randomNumber + " c " + p.attemptPlayer + " попытки");
+            System.out.println("Игрок \"" + p.getName() + "\" угадал число " + randomNumber + " c " + p.getAttemptNumber() + " попытки");
             return true;
-        } else {
-            if (p.getNumbs() > randomNumber) {
-                System.out.println("Данное число больше того, что загадал компьютер");
-            } else {
-                System.out.println("Данное число меньше того, что загадал компьютер");
-            }
-            return false;
         }
+
+        if (p.getNumbs() > randomNumber) {
+            System.out.println("Данное число больше того, что загадал компьютер");
+        } else {
+            System.out.println("Данное число меньше того, что загадал компьютер");
+        }
+        return false;
     }
 
-    private void showAttempts(int attemptPlayer, Player p) {
+    private void showAttempts(Player p) {
         System.out.print(p.getName() + " - ");
-        for (int numbs : p.getEnteredNums(attemptPlayer)) {
-            System.out.print(numbs+" ");
+        for (int num : p.getEnteredNums()) {
+            System.out.print(num + " ");
         }
         System.out.print("\n");
     }
