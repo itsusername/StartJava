@@ -18,6 +18,7 @@ public class Player {
 
     public void setNum(int num) {
         enteredNums[attemptNum] = num;
+        this.attemptNum = attemptNum + 1;
     }
 
     public int getLastNum() {

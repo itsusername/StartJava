@@ -22,11 +22,11 @@ public class GuessNumber {
         p2.setAttemptNum(0);
 
         do {
-            if (checkGameProcess(randomNum, p1)) {
+            if (makeMove(randomNum, p1)) {
                 break;
             }
 
-            if (checkGameProcess(randomNum, p2)) {
+            if (makeMove(randomNum, p2)) {
                 break;
             }
 
@@ -40,10 +40,9 @@ public class GuessNumber {
         p2.clearNums();
     }
 
-    private boolean checkGameProcess(int randomNum, Player p) {
+    private boolean makeMove(int randomNum, Player p) {
         if (p.getAttemptNum() < 10) {
             p.setNum(inputNum(p.getName()));
-            p.setAttemptNum(p.getAttemptNum() + 1);
             if (checkNums(randomNum, p)) {
                 return true;
             }
